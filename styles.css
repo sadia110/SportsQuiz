@@ -1,13 +1,16 @@
 *{
+    box-sizing: border-box;
   }
-  
+
+  }
   .quiz-container{
     height: 500px;
     width: 800px;
+    background-color: rgb(230, 229, 241);
     margin: 30px auto;
-
     border-radius: 8px;
-    padding:25px
+    padding:25px 
+
   }
   
   .quiz-container .question{
@@ -96,8 +99,8 @@
   }
   
   .quiz-container .score .score-card span{
-    background-color: rgb(12, 88, 29);
-    padding: 5px 20px;
+    background-color: green
+    padding: 10px 30px;
     border: none;
     color:white;
 
@@ -138,5 +141,5 @@ h1{
 } 
 smalltext{ 
     padding-top: 5px; 
-    font-size: 16px; 
-} 
+    font-size: 16px;
+}
