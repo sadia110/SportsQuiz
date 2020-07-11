@@ -24,10 +24,26 @@ var app={
                 answer:4
             },
             {
-                q:'When did the Raptors won the NBA championship',
+                q:'When did the  Raptors won the NBA championship',
                 options: ['1999', '2018', '2019', 'Never'],
                 answer:3
-            }     
+            }, 
+            {
+                q:'How many Stanely Cup Championships has the Leafs won ?',
+                options: ['24', '1', '13', '0'],
+                answer:3
+            }, 
+            {
+                q:'Which NHL team lost to a Zamboni driver as a goalie for the first time in history?',
+                options: ['Boston', 'Montreal Canadiens ', 'Carolina Hurricanes', 'It never happened'],
+                answer:4
+            }, 
+            {
+                q:'Which player is known for the famous bat flip on the Jays',
+                options: ['Vladimir Guerrero', 'Jose Bautista', 'Jose Reyes', 'Mark Buehrie'],
+                answer:2
+            } 
+     
             
           
         ],
@@ -79,13 +95,9 @@ var app={
         },
         score:0,
         scoreCard:function(){
-            scoreCard.innerHTML=this.questions.length + "/" + this.score;
+            scoreCard.innerHTML= this.score + "/" +   this.questions.length ;
         }
 } 
-
-
-
-
 
 
 
@@ -105,3 +117,30 @@ function next(){
     app.allowClick();
 } 
 
+// for timer 
+
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+
+ 
+}
+
+window.onload = function () {
+    var twoMinutes = 60 * 1,
+        display = document.querySelector('#time');
+    startTimer(twoMinutes, display);
+};
